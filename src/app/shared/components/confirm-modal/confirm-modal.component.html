@@ -1,0 +1,41 @@
+<ng-container *ngIf="isConfirmFlag; else VerificationDialog">
+  <div *ngIf="isConfirmFlag" class="modal-header">
+    <h4 class="modal-title">{{ title }}</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{ message }}</p>
+  </div>
+  <div class="modal-footer">
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary" (click)="decline()">
+        No (F4)
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="accept()">
+        Yes (F5)
+      </button>
+    </div>
+  </div>
+</ng-container>
+<ng-template #VerificationDialog>
+  <div class="modal-header">
+    <h4 class="modal-title">{{ title }}</h4>
+  </div>
+  <div class="modal-body">
+    <p>{{ message }}</p>
+  </div>
+  <div class="modal-footer">
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary" (click)="dismiss()">
+        Done (F4)
+      </button>
+    </div>
+  </div>
+</ng-template>

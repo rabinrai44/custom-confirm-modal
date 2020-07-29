@@ -1,0 +1,15 @@
+<form class="form-inline" [formGroup]="form" (ngSubmit)="processInput()">
+  <div class="form-group">
+    <label for="scanInput">Enter supervisor password:</label>
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <input
+      class="form-control"
+      formControlName="scanInput"
+      placeholder="Type here.."
+    />
+  </div>
+  <button type="button" class="btn btn-primary mb-2" (click)="goMenu()">
+    Menu (F1)
+  </button>
+</form>
