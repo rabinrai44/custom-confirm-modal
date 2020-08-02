@@ -8,18 +8,18 @@ import { ConfirmModalComponent } from '../shared/components/confirm-modal/confir
 export class VerificationService {
   constructor(private modalService: NgbModal) {}
 
-  async confirm(message: string): Promise<boolean> {
+  confirm(message: string): Promise<boolean> {
     const modalRef = this.modalService.open(ConfirmModalComponent);
     modalRef.componentInstance.message = message;
     modalRef.componentInstance.isConfirmFlag = true;
 
-    return await modalRef.result;
+    return modalRef.result;
   }
 
-  async infoDialog(message: string): Promise<string> {
+  infoDialog(message: string): Promise<string> {
     const modalRef = this.modalService.open(ConfirmModalComponent);
     modalRef.componentInstance.message = message;
 
-    return await modalRef.result;
+    return modalRef.result;
   }
 }

@@ -30,7 +30,7 @@ export class LogonSupervisorComponent implements OnInit {
     this.ref.detach();
     setInterval(() => {
       this.ref.detectChanges();
-    }, 500);
+    }, 250);
   }
 
   ngOnInit(): void {
